@@ -5,7 +5,7 @@ Allows chaining :)
 ## Installation
 
 ```
-npm install pluck --save
+npm install object-pluck --save
 ```
 
 ## Usage
