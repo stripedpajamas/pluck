@@ -1,0 +1,11 @@
+{
+  "name": "object-pluck",
+  "version": "0.0.1",
+  "description": "pluck values from an object and deposit them into a new object",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/pluck.spec.js"
+  },
+  "author": "Peter Squicciarini",
+  "license": "MIT"
+}
