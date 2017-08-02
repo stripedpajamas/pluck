@@ -7,5 +7,9 @@
     "test": "node test/pluck.spec.js"
   },
   "author": "Peter Squicciarini",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stripedpajamas/pluck.git"
+  }
 }
