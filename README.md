@@ -1,11 +1,13 @@
 # pluck
 Helps pluck multiple values out of an object and deposits them into a new object, optionally under a specific key.
-Allows chaining :)
+Allows chaining and plucking from an array of objects.
 
 ## Installation
 
 ```
+ 
 npm install object-pluck --save
+ 
 ```
 
 ## Usage
@@ -28,15 +30,31 @@ const object = {
   nest: {
     d: 4,
     e: 5,
-  }
+  },
+  array: [
+    {
+      lame: 'sauce',
+      proto: 'buff',
+    },
+    {
+      lame: 'dance',
+      proto: 'rage',
+    }
+  ]
 };
  
 // standard plucking (pretty much just destructing)
 pluck(['a', 'c'], object).end(); // { a: 1, c: 3 }
  
 // namespacing
-pluck(['a', 'b'], object, 'foo').end(); // { foo: { a: 1, b: 2 } }
+pluck(['a', 'b'], object, 'foo').end();
+// returns { foo: { a: 1, b: 2 } }
  
 // chaining
-pluck(['a', 'c'], object, 'foo').pluck(['d', 'e'], object.nest, 'bar').end(); // { foo: { a: 1, c: 3 }, bar: { d: 4, e: 5 } }
+pluck(['a', 'c'], object, 'foo').pluck(['d', 'e'], object.nest, 'bar').end();
+// returns { foo: { a: 1, c: 3 }, bar: { d: 4, e: 5 } }
+ 
+// plucks from an array of objects too (requires a namespace)
+pluck(['lame', 'proto'], object.array, 'fromArray').end();
+// returns { fromArray: [ { lame: 'sauce', proto: 'buff' }, { lame: 'dance', proto: 'rage' } ] }
 ```
