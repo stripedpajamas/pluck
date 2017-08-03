@@ -4,11 +4,7 @@ Allows chaining and plucking from an array of objects.
 
 ## Installation
 
-```
- 
-npm install object-pluck --save
- 
-```
+`npm install object-pluck --save`
 
 ## Usage
 
